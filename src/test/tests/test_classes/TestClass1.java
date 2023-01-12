@@ -1,4 +1,7 @@
+package test_classes;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -274,6 +277,10 @@ public class TestClass1 {
         Assert.assertEquals("ACCOUNT DELETED!", driver.findElement(By.xpath("//*[@class='title text-center']/b")).getText());
     }
 
+    @After
+    public void tearDown() {
 
+        driver.quit();
+    }
 
 }
